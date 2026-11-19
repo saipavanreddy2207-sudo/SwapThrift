@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwapThrift | Give pre-loved items a new home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">Swap<span>Thrift</span></a>
+    <p>Give pre-loved items a new home.</p>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">BUY · SELL · REUSE</p>
+        <h1>Good finds.<br>Better second lives.</h1>
+        <p class="intro">Discover useful second-hand items or list something you no longer need.</p>
+      </div>
+      <div class="hero-mark" aria-hidden="true">↗</div>
+    </section>
+
+    <section class="toolbar">
+      <input id="search" type="search" placeholder="Search items..." aria-label="Search items">
+      <button id="show-form" class="primary-button">＋ Sell an item</button>
+    </section>
+
+    <section id="form-panel" class="form-panel hidden">
+      <h2>List an item</h2>
+      <form id="listing-form">
+        <label>Item name<input name="title" required maxlength="70" placeholder="e.g. Winter jacket"></label>
+        <div class="form-row">
+          <label>Price (€)<input name="price" type="number" min="0" step="0.01" required placeholder="15"></label>
+          <label>Condition
+            <select name="condition">
+              <option>Good</option><option>Very good</option><option>Like new</option><option>Used</option>
+            </select>
+          </label>
+        </div>
+        <div class="form-row">
+          <label>Category
+            <select name="category">
+              <option>Clothing</option><option>Electronics</option><option>Home</option><option>Books</option><option>Sports</option><option>Other</option>
+            </select>
+          </label>
+          <label>Location<input name="location" placeholder="e.g. Cham, Germany"></label>
+        </div>
+        <label>Description<textarea name="description" rows="3" placeholder="Describe the item..."></textarea></label>
+        <div class="form-actions">
+          <button type="button" id="cancel-form" class="secondary-button">Cancel</button>
+          <button type="submit" class="primary-button">Publish listing</button>
+        </div>
+        <p id="form-message" class="form-message" role="status"></p>
+      </form>
+    </section>
+
+    <section class="listings-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE COMMUNITY MARKET</p><h2>Recently listed</h2></div>
+        <span id="listing-count" class="count"></span>
+      </div>
+      <div id="listings" class="grid" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer>SwapThrift · A starter marketplace project</footer>
+  <script src="app.js"></script>
+</body>
+</html>
